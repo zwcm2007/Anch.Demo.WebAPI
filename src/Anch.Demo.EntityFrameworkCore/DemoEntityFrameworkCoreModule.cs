@@ -13,18 +13,16 @@ namespace Anch.Demo.EntityFrameworkCore
         typeof(AbpEntityFrameworkCoreModule)
         //typeof(AbpDapperModule)
         )]
-    public class PosEntityFrameworkCoreModule : AbpModule
+    public class DemoEntityFrameworkCoreModule : AbpModule
     {
-        public PosEntityFrameworkCoreModule()
+        public DemoEntityFrameworkCoreModule()
         {
         }
 
         public override void Initialize()
         {
             IocManager.IocContainer.Register(
-                Component.For<ISqlExecuter<BusinessDbContext>>().ImplementedBy<SqlExecuter<BusinessDbContext>>().LifestyleTransient(),
-                Component.For<ISqlExecuter<SystemDbContext>>().ImplementedBy<SqlExecuter<SystemDbContext>>().LifestyleTransient(),
-                Component.For<ISqlExecuter<ClientDbContext>>().ImplementedBy<SqlExecuter<ClientDbContext>>().LifestyleTransient()
+                Component.For<ISqlExecuter<DemoDbContext>>().ImplementedBy<SqlExecuter<DemoDbContext>>().LifestyleTransient()
             );
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
 

@@ -18,14 +18,14 @@ namespace Anch.Demo.Application
         private readonly IRepository<SM_Function, string> _sm_functionRepo;
         private readonly IRepository<SM_Role, string> _sm_roleRepo;
         private readonly IRepository<SM_User, string> _sm_userRepo;
-        private readonly ISqlExecuter<SystemDbContext> _sqlExecuter;
+        private readonly ISqlExecuter<DemoDbContext> _sqlExecuter;
 
         public UserAppService(
             IRepository<SM_Account, string> sm_accountRepo,
             IRepository<SM_Function, string> sm_functionRepo,
             IRepository<SM_Role, string> sm_roleRepo,
             IRepository<SM_User, string> sm_userRepo,
-            ISqlExecuter<SystemDbContext> sqlExecuter,
+            ISqlExecuter<DemoDbContext> sqlExecuter,
             IObjectMapper objectMapper)
             : base(objectMapper)
         {

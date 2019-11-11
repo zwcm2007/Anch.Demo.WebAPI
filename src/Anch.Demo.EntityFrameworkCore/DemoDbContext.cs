@@ -13,9 +13,9 @@ namespace Anch.Demo.EntityFrameworkCore
     //    typeof(DemoRepositoryBase<>),
     //    typeof(DemoRepositoryBase<,>)
     //)]
-    public class SystemDbContext : AbpDbContext
+    public class DemoDbContext : AbpDbContext
     {
-        public SystemDbContext(DbContextOptions<SystemDbContext> options)
+        public DemoDbContext(DbContextOptions<DemoDbContext> options)
             : base(options)
         {
         }

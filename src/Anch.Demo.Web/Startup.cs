@@ -31,23 +31,9 @@ namespace Anch.Demo.Web
 
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            services.AddAbpDbContext<BusinessDbContext>(options =>
-            {
-                var connStr = Configuration.GetConnectionString("BS_BUSINESS");
-                options.DbContextOptions.UseSqlServer(connStr, b => b.UseRowNumberForPaging());
-                //options.DbContextOptions.UseSqlServer(options.ConnectionString);
-            });
-
-            services.AddAbpDbContext<SystemDbContext>(options =>
+            services.AddAbpDbContext<DemoDbContext>(options =>
             {
                 var connStr = Configuration.GetConnectionString("BS_SYSTEM");
-                options.DbContextOptions.UseSqlServer(connStr, b => b.UseRowNumberForPaging());
-                //options.DbContextOptions.UseSqlServer(options.ConnectionString);
-            });
-
-            services.AddAbpDbContext<ClientDbContext>(options =>
-            {
-                var connStr = Configuration.GetConnectionString("BT_CLIENT");
                 options.DbContextOptions.UseSqlServer(connStr, b => b.UseRowNumberForPaging());
                 //options.DbContextOptions.UseSqlServer(options.ConnectionString);
             });
@@ -159,8 +145,6 @@ namespace Anch.Demo.Web
             {
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "Demo API V1");
             }); // URL: /swagger
-
-
         }
     }
 }

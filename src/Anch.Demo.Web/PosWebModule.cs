@@ -14,7 +14,7 @@ namespace Anch.Demo.Web
 {
     [DependsOn(
         typeof(ArchivesApplicationModule),
-        typeof(PosEntityFrameworkCoreModule),
+        typeof(DemoEntityFrameworkCoreModule),
         typeof(AbpAspNetCoreModule))]
     public class PosWebModule : AbpModule
     {
