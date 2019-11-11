@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Entities\BS_SYSTEM\Role.cs" />
+    <Compile Remove="Entities\BS_SYSTEM\User.cs" />
+    <Compile Remove="Entities\BS_SYSTEM\UserRole.cs" />
+    <Compile Remove="Task.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Abp" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0" />
+  </ItemGroup>
+
+</Project>
