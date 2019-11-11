@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="BT_CLIENT\**" />
+    <EmbeddedResource Remove="BT_CLIENT\**" />
+    <None Remove="BT_CLIENT\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Abp.AutoMapper" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Anch.Demo.Common\Anch.Demo.Common.csproj" />
+    <ProjectReference Include="..\Anch.Demo.Core\Anch.Demo.Core.csproj" />
+    <ProjectReference Include="..\Anch.Demo.EntityFrameworkCore\Anch.Demo.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+</Project>

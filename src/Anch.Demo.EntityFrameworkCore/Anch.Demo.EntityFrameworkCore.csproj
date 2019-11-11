@@ -1,0 +1,69 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DapperEntityMapping\**" />
+    <Compile Remove="Seed\**" />
+    <EmbeddedResource Remove="DapperEntityMapping\**" />
+    <EmbeddedResource Remove="Seed\**" />
+    <None Remove="DapperEntityMapping\**" />
+    <None Remove="Seed\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Base\QueryTypeConfigurationBase.cs" />
+    <Compile Remove="ComplexModel.cs" />
+    <Compile Remove="EntityMapping\BS_SYSTEM\RoleMapping.cs" />
+    <Compile Remove="EntityMapping\BS_SYSTEM\UserMapping.cs" />
+    <Compile Remove="Consts.cs" />
+    <Compile Remove="EntityMapping\PersonMapping.cs" />
+    <Compile Remove="DbContexts\DbContextOptionsConfigurer.cs" />
+    <Compile Remove="DbContexts\SystemDbContextFactory.cs" />
+    <Compile Remove="DbContexts\SystemRepositoryBase.cs" />
+    <Compile Remove="IReadOnlyDatabase.cs" />
+    <Compile Remove="ReadOnlyDatabase.cs" />
+    <Compile Remove="Repositories\BdcdyRepository.cs" />
+    <Compile Remove="Repositories\DjfzCqzsRepository.cs" />
+    <Compile Remove="Repositories\EnumValueRepository.cs" />
+    <Compile Remove="Repositories\QlrRepository.cs" />
+    <Compile Remove="Repositories\TaskRepository.cs" />
+    <Compile Remove="Repositories\UserRepository.cs" />
+    <Compile Remove="Repositories\XtszRepository.cs" />
+    <Compile Remove="SDE_MaintainDbContext.cs" />
+    <Compile Remove="SDE_MaintainRepositoryBase.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="App.config" />
+    <None Remove="packages.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Abp.EntityFrameworkCore" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Anch.Demo.Core\Anch.Demo.Core.csproj" />
+  </ItemGroup>
+
+</Project>
