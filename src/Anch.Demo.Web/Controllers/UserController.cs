@@ -39,7 +39,7 @@ namespace Anch.Demo.Web.Controllers
             if (!ret.Succeeded) return Unauthorized();
 
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(PosConsts.Secret);
+            var key = Encoding.ASCII.GetBytes(DemoConsts.Secret);
             var authTime = DateTime.UtcNow;
             var expiresAt = authTime.AddHours(12);   ///authTime.AddSeconds(30);
             var tokenDescriptor = new SecurityTokenDescriptor

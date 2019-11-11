@@ -23,8 +23,6 @@
   <ItemGroup>
     <Compile Remove="Base\QueryTypeConfigurationBase.cs" />
     <Compile Remove="ComplexModel.cs" />
-    <Compile Remove="EntityMapping\BS_SYSTEM\RoleMapping.cs" />
-    <Compile Remove="EntityMapping\BS_SYSTEM\UserMapping.cs" />
     <Compile Remove="Consts.cs" />
     <Compile Remove="EntityMapping\PersonMapping.cs" />
     <Compile Remove="IReadOnlyDatabase.cs" />

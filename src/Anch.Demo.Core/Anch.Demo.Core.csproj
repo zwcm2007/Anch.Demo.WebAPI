@@ -9,9 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Entities\BS_SYSTEM\Role.cs" />
-    <Compile Remove="Entities\BS_SYSTEM\User.cs" />
-    <Compile Remove="Entities\BS_SYSTEM\UserRole.cs" />
     <Compile Remove="Task.cs" />
   </ItemGroup>
 

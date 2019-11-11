@@ -6,7 +6,7 @@ namespace Anch.Demo.Core
     /// <summary>
     /// 核心业务层模块
     /// </summary>
-    public class PosCoreModule : AbpModule
+    public class DemoCoreModule : AbpModule
     {
         public override void Initialize()
         {

@@ -9,7 +9,7 @@ using Castle.MicroKernel.Registration;
 namespace Anch.Demo.EntityFrameworkCore
 {
     [DependsOn(
-        typeof(PosCoreModule),
+        typeof(DemoCoreModule),
         typeof(AbpEntityFrameworkCoreModule)
         //typeof(AbpDapperModule)
         )]

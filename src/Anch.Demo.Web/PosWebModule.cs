@@ -29,7 +29,7 @@ namespace Anch.Demo.Web
 
         public override void PreInitialize()
         {
-            Configuration.DefaultNameOrConnectionString = _appConfiguration.GetConnectionString(PosConsts.ConnectionStringName);
+            Configuration.DefaultNameOrConnectionString = _appConfiguration.GetConnectionString(DemoConsts.ConnectionStringName);
 #if DEBUG
             Configuration.Modules.AbpWebCommon().SendAllExceptionsToClients = true;
 #endif

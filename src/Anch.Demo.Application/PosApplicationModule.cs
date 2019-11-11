@@ -5,7 +5,7 @@ using Anch.Demo.Core;
 
 namespace Anch.Demo.Application
 {
-    [DependsOn(typeof(PosCoreModule),
+    [DependsOn(typeof(DemoCoreModule),
        //typeof(MaintainDomainServiceModule),
        //typeof(MaintainCommonModule),
        typeof(AbpAutoMapperModule))]
