@@ -12,7 +12,7 @@ namespace Anch.Demo.Application
     /// <summary>
     /// 账号应用服务
     /// </summary>
-    public class UserAppService : PosAppServiceBase, IUserAppService
+    public class UserAppService : DemoAppServiceBase, IUserAppService
     {
         private readonly IRepository<SM_Account, string> _sm_accountRepo;
         private readonly IRepository<SM_Function, string> _sm_functionRepo;

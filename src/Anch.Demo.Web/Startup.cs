@@ -105,7 +105,7 @@ namespace Anch.Demo.Web
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             //
             // Configure Abp and Dependency Injection
-            return services.AddAbp<PosWebModule>(options =>
+            return services.AddAbp<DemoWebModule>(options =>
             {
                 // Configure Log4Net logging
                 options.IocManager.IocContainer.AddFacility<LoggingFacility>(

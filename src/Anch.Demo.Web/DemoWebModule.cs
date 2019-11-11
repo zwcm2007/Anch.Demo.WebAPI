@@ -13,15 +13,15 @@ using System.Reflection;
 namespace Anch.Demo.Web
 {
     [DependsOn(
-        typeof(ArchivesApplicationModule),
+        typeof(DemoApplicationModule),
         typeof(DemoEntityFrameworkCoreModule),
         typeof(AbpAspNetCoreModule))]
-    public class PosWebModule : AbpModule
+    public class DemoWebModule : AbpModule
     {
         //private readonly IConfiguration _configuration;
         private readonly IConfigurationRoot _appConfiguration;
 
-        public PosWebModule(IWebHostEnvironment env/*, IConfiguration configuration*/)
+        public DemoWebModule(IWebHostEnvironment env/*, IConfiguration configuration*/)
         {
             //_configuration = configuration;
             _appConfiguration = AppConfigurations.Get(env.ContentRootPath, env.EnvironmentName);
@@ -34,7 +34,7 @@ namespace Anch.Demo.Web
             Configuration.Modules.AbpWebCommon().SendAllExceptionsToClients = true;
 #endif
             Configuration.Modules.AbpAspNetCore().CreateControllersForAppServices(
-                     typeof(ArchivesApplicationModule).GetAssembly()
+                     typeof(DemoApplicationModule).GetAssembly()
                  );
         }
 

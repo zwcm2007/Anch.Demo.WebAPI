@@ -9,11 +9,11 @@ namespace Anch.Demo.Application
        //typeof(MaintainDomainServiceModule),
        //typeof(MaintainCommonModule),
        typeof(AbpAutoMapperModule))]
-    public class ArchivesApplicationModule : AbpModule
+    public class DemoApplicationModule : AbpModule
     {
         public override void Initialize()
         {
-            var thisAssembly = typeof(ArchivesApplicationModule).GetAssembly();
+            var thisAssembly = typeof(DemoApplicationModule).GetAssembly();
 
             IocManager.RegisterAssemblyByConvention(thisAssembly);
 
