@@ -1,6 +1,7 @@
 ﻿using Anch.Demo.Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.ValueGeneration;
 
 namespace Anch.Demo.EntityFrameworkCore
 {
@@ -19,7 +20,7 @@ namespace Anch.Demo.EntityFrameworkCore
             builder.HasKey(e => e.Id);
             // 关系
             // 属性
-            builder.Property(e => e.Id).HasColumnName("Id");
+            builder.Property(e => e.Id).HasColumnName("Id").ValueGeneratedOnAdd();
             builder.Property(e => e.UserName).IsRequired();
             builder.Property(e => e.Password).IsRequired();
         }

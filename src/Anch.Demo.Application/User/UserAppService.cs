@@ -14,11 +14,11 @@ namespace Anch.Demo.Application
     /// </summary>
     public class UserAppService : DemoAppServiceBase, IUserAppService
     {
-        private readonly IRepository<User, string> _userRepo;
+        private readonly IRepository<User, int> _userRepo;
         private readonly IRepository<Role, string> _roleRepo;
         private readonly ISqlExecuter<DemoDbContext> _sqlExecuter;
 
-        public UserAppService(IRepository<User, string> userRepo,
+        public UserAppService(IRepository<User, int> userRepo,
             IRepository<Role, string> roleRepo,
             ISqlExecuter<DemoDbContext> sqlExecuter,
             IObjectMapper objectMapper)
@@ -46,7 +46,7 @@ namespace Anch.Demo.Application
         /// <param name="userId">用户ID</param>
         /// <param name="newPwd">新密码</param>
         /// <param name=""></param>
-        public void ChangePassword(string userId, string newPwd)
+        public void ChangePassword(int userId, string newPwd)
         {
             var user = _userRepo.Get(userId);
 

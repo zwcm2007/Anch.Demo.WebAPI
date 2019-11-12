@@ -9,7 +9,7 @@ namespace Anch.Demo.Application
     /// </summary>
     public interface IUserAppService : IApplicationService
     {
-        void ChangePassword(string userId, string newPwd);
+        void ChangePassword(int userId, string newPwd);
 
         void AddUser(AddUserInput input);
 

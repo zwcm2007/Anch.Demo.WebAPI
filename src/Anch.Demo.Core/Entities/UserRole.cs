@@ -5,9 +5,9 @@ namespace Anch.Demo.Core
     /// <summary>
     /// 用户角色关联
     /// </summary>
-    public class UserRole : Entity
+    public class UserRole
     {
-        public string UserID { get; set; }
+        public int UserID { get; set; }
 
         public User User { get; set; }
 

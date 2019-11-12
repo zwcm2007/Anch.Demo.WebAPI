@@ -7,7 +7,7 @@ namespace Anch.Demo.Core
     /// <summary>
     /// 用户
     /// </summary>
-    public class User : Entity<string>
+    public class User : Entity<int>
     {
         /// <summary>
         /// 用户名

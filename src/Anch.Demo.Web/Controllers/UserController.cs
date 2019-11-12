@@ -42,7 +42,7 @@ namespace Anch.Demo.Web.Controllers
         /// <returns></returns>
         // POST api/v1/user/id
         [HttpPut()]
-        public void Put(string id, [FromBody] string password)
+        public void Put(int id, [FromBody] string password)
         {
             _userAppService.ChangePassword(id, password);
         }
