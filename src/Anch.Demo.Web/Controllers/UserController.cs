@@ -18,15 +18,37 @@ namespace Anch.Demo.Web.Controllers
     //[Authorize]
     public class UserController : BaseController
     {
-        private readonly IUserAppService _accountAppService;
+        private readonly IUserAppService _userAppService;
 
-        public UserController(IUserAppService accountAppService)
+        public UserController(IUserAppService userAppService)
         {
-            _accountAppService = accountAppService;
+            _userAppService = userAppService;
         }
 
         /// <summary>
-        /// 认证
+        /// 新增用户
+        /// </summary>
+        /// <returns></returns>
+        // POST api/v1/user
+        [HttpPost()]
+        public void Post([FromBody] AddUserInput input)
+        {
+            _userAppService.AddUser(input);
+        }
+
+        /// <summary>
+        /// 新增用户
+        /// </summary>
+        /// <returns></returns>
+        // POST api/v1/user/id
+        [HttpPost()]
+        public void Put(string id, [FromBody] string password)
+        {
+            _userAppService.ChangePassword(id, password);
+        }
+
+        /// <summary>
+        /// 登录认证
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
@@ -35,7 +57,7 @@ namespace Anch.Demo.Web.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Authenticate([FromBody] LoginInput input)
         {
-            LoginOutput ret = await _accountAppService.CheckLogin(input);
+            LoginOutput ret = await _userAppService.CheckLogin(input);
             if (!ret.Succeeded) return Unauthorized();
 
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -81,20 +103,9 @@ namespace Anch.Demo.Web.Controllers
         [HttpGet()]
         public SearchUsersOutput Get([FromQuery] SearchUsersInput input)
         {
-            var output = _accountAppService.SearchAllUsers(input);
+            var output = _userAppService.SearchAllUsers(input);
             return output;
         }
-
-        /// <summary>
-        /// 新增用户
-        /// </summary>
-        /// <returns></returns>
-        // POST api/v1/user
-        //[HttpPost()]
-        //public void Post([FromBody] AddUserInput input)
-        //{
-        //    _accountAppService.AddUser(input);
-        //}
 
         ///// <summary>
         ///// 获取账号信息

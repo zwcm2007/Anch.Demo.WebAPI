@@ -29,9 +29,28 @@ namespace Anch.Demo.Application
             _sqlExecuter = sqlExecuter;
         }
 
-        public void ChangePassword()
+        /// <summary>
+        /// 新增用户
+        /// </summary>
+        /// <param name="input"></param>
+        public void AddUser(AddUserInput input)
         {
-           
+            throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// 修改密码
+        /// </summary>
+        /// <param name="userId">用户ID</param>
+        /// <param name="newPwd">新密码</param>
+        /// <param name=""></param>
+        public void ChangePassword(string userId, string newPwd)
+        {
+            var user = _userRepo.Get(userId);
+
+            user.ChangePassword(newPwd);
+
+            _userRepo.Update(user);
         }
 
         #region 登录验证
