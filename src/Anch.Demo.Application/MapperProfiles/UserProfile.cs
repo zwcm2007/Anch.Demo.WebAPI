@@ -7,7 +7,7 @@ namespace Anch.Demo.Application
     {
         public UserProfile()
         {
-            CreateMap<SM_User,UserDto>()
+            CreateMap<User,UserDto>()
                 .ForMember(dest => dest.UserCode, opt => opt.MapFrom(src => src.Id));
 
             //CreateMap<H, H_LS>()

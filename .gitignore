@@ -261,3 +261,4 @@ __pycache__/
 *.pyc
 /dist
 /src/TianYi.Archives.EntityFrameworkCore/Migrations
+/src/Anch.Demo.Application/.editorconfig

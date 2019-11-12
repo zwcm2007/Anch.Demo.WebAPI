@@ -10,30 +10,28 @@ using System.Threading.Tasks;
 namespace Anch.Demo.Application
 {
     /// <summary>
-    /// 账号应用服务
+    /// 用户应用服务
     /// </summary>
     public class UserAppService : DemoAppServiceBase, IUserAppService
     {
-        private readonly IRepository<SM_Account, string> _sm_accountRepo;
-        private readonly IRepository<SM_Function, string> _sm_functionRepo;
-        private readonly IRepository<SM_Role, string> _sm_roleRepo;
-        private readonly IRepository<SM_User, string> _sm_userRepo;
+        private readonly IRepository<User, string> _userRepo;
+        private readonly IRepository<Role, string> _roleRepo;
         private readonly ISqlExecuter<DemoDbContext> _sqlExecuter;
 
-        public UserAppService(
-            IRepository<SM_Account, string> sm_accountRepo,
-            IRepository<SM_Function, string> sm_functionRepo,
-            IRepository<SM_Role, string> sm_roleRepo,
-            IRepository<SM_User, string> sm_userRepo,
+        public UserAppService(IRepository<User, string> userRepo,
+            IRepository<Role, string> roleRepo,
             ISqlExecuter<DemoDbContext> sqlExecuter,
             IObjectMapper objectMapper)
             : base(objectMapper)
         {
-            _sm_accountRepo = sm_accountRepo;
-            _sm_functionRepo = sm_functionRepo;
-            _sm_roleRepo = sm_roleRepo;
-            _sm_userRepo = sm_userRepo;
+            _roleRepo = roleRepo;
+            _userRepo = userRepo;
             _sqlExecuter = sqlExecuter;
+        }
+
+        public void ChangePassword()
+        {
+           
         }
 
         #region 登录验证
@@ -42,7 +40,7 @@ namespace Anch.Demo.Application
         {
             var output = new LoginOutput();
 
-            var user = await _sm_userRepo.FirstOrDefaultAsync(u => u.UserName == input.UserName);
+            var user = await _userRepo.FirstOrDefaultAsync(u => u.UserName == input.UserName);
             if (user == null)
             {
                 output.Succeeded = false;
@@ -68,23 +66,6 @@ namespace Anch.Demo.Application
 
         #endregion 登录验证
 
-        public void GetTest()
-        {
-            var cccc = _sm_userRepo.GetAll().ToList();
-
-            //var aab = _sm_accountRepo.GetAll().ToList();
-
-            //var role = _sm_roleRepo.GetAllIncluding(r => r.RoleFuncs).ToList();
-
-            //var list = _sqlExecuter.QueryList<SM_Account>("select * from SM_Account");
-
-            //var list = _sqlExecuter.Query<SM_Account>("select * from SM_Account").ToList();
-
-            //var aaas = _sm_functionRepo.GetAll().ToList();
-
-            //var bbbbs = _sm_accountRepo.GetAll().ToList();
-        }
-
         /// <summary>
         /// 查询用户
         /// </summary>
@@ -92,10 +73,10 @@ namespace Anch.Demo.Application
         /// <returns></returns>
         public SearchUsersOutput SearchAllUsers(SearchUsersInput input)
         {
-            var predicate = PredicateBuilder.True<SM_User>()
+            var predicate = PredicateBuilder.True<User>()
              .AndIf(input.UserName != null, u => input.IsExactMatch ? u.UserName == input.UserName : u.UserName.Contains(input.UserName));
 
-            var query = _sm_userRepo.GetAll().Where(predicate)
+            var query = _userRepo.GetAll().Where(predicate)
                 .Skip(input.SkipCount)
                 .Take(input.MaxResultCount);
 

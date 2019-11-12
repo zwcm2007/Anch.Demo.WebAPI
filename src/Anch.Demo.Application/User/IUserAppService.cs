@@ -5,7 +5,7 @@ namespace Anch.Demo.Application
 {
     public interface IUserAppService : IApplicationService
     {
-         void GetTest();
+        void ChangePassword();
 
         Task<LoginOutput> CheckLogin(LoginInput input);
 

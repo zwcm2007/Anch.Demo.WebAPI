@@ -33,9 +33,7 @@ namespace Anch.Demo.Web
         {
             services.AddAbpDbContext<DemoDbContext>(options =>
             {
-                var connStr = Configuration.GetConnectionString("BS_SYSTEM");
-                options.DbContextOptions.UseSqlServer(connStr, b => b.UseRowNumberForPaging());
-                //options.DbContextOptions.UseSqlServer(options.ConnectionString);
+                options.DbContextOptions.UseMySql(options.ConnectionString);
             });
 
             services.AddMvc(options =>

@@ -24,7 +24,7 @@ namespace Anch.Demo.Application
     }
 
 
-    [AutoMapFrom(typeof(SM_User))]
+    [AutoMapFrom(typeof(User))]
     public class UserDto
     {
         public string UserCode { get; set; }

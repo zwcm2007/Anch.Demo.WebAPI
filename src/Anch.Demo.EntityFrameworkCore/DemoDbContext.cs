@@ -20,11 +20,8 @@ namespace Anch.Demo.EntityFrameworkCore
         {
         }
 
-        public DbSet<SM_Account> SM_Accounts { get; set; }
-        public DbSet<SM_Function> SM_Functions { get; set; }
-
-        public DbSet<SM_Role> Roles { get; set; }
-        public DbSet<SM_RoleFunc> RoleFuncs { get; set; }
-        public DbSet<SM_User> Users { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<UserRole> UserRoles { get; set; }
     }
 }
