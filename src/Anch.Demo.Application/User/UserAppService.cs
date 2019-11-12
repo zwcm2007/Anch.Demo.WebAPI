@@ -35,7 +35,9 @@ namespace Anch.Demo.Application
         /// <param name="input"></param>
         public void AddUser(AddUserInput input)
         {
-            throw new System.NotImplementedException();
+            User user = _objectMapper.Map<User>(input);
+
+            _userRepo.InsertAndGetId(user);
         }
 
         /// <summary>

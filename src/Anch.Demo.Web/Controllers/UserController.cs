@@ -37,11 +37,11 @@ namespace Anch.Demo.Web.Controllers
         }
 
         /// <summary>
-        /// 新增用户
+        /// 修改密码
         /// </summary>
         /// <returns></returns>
         // POST api/v1/user/id
-        [HttpPost()]
+        [HttpPut()]
         public void Put(string id, [FromBody] string password)
         {
             _userAppService.ChangePassword(id, password);
