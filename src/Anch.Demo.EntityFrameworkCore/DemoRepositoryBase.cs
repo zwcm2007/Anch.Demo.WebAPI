@@ -2,17 +2,17 @@
 using Abp.EntityFrameworkCore;
 using Abp.EntityFrameworkCore.Repositories;
 
-namespace BaiTeng.POS.EntityFrameworkCore
+namespace Anch.Demo.EntityFrameworkCore
 {
     /// <summary>
     /// Base class for custom repositories of the application.
     /// </summary>
     /// <typeparam name="TEntity">Entity type</typeparam>
     /// <typeparam name="TPrimaryKey">Primary key type of the entity</typeparam>
-    public abstract class SystemRepositoryBase<TEntity, TPrimaryKey> : EfCoreRepositoryBase<SystemDbContext, TEntity, TPrimaryKey>
+    public abstract class DemoRepositoryBase<TEntity, TPrimaryKey> : EfCoreRepositoryBase<DemoDbContext, TEntity, TPrimaryKey>
             where TEntity : class, IEntity<TPrimaryKey>
     {
-        protected SystemRepositoryBase(IDbContextProvider<SystemDbContext> dbContextProvider)
+        protected DemoRepositoryBase(IDbContextProvider<DemoDbContext> dbContextProvider)
             : base(dbContextProvider)
         {
         }
@@ -22,13 +22,13 @@ namespace BaiTeng.POS.EntityFrameworkCore
 
     /// <summary>
     /// Base class for custom repositories of the application.
-    /// This is a shortcut of <see cref="SystemRepositoryBase{TEntity,TPrimaryKey}"/> for <see cref="int"/> primary key.
+    /// This is a shortcut of <see cref="DemoRepositoryBase{TEntity,TPrimaryKey}"/> for <see cref="int"/> primary key.
     /// </summary>
     /// <typeparam name="TEntity">Entity type</typeparam>
-    public abstract class SystemRepositoryBase<TEntity> : SystemRepositoryBase<TEntity, int>
+    public abstract class SystemRepositoryBase<TEntity> : DemoRepositoryBase<TEntity, int>
         where TEntity : class, IEntity<int>
     {
-        protected SystemRepositoryBase(IDbContextProvider<SystemDbContext> dbContextProvider)
+        protected SystemRepositoryBase(IDbContextProvider<DemoDbContext> dbContextProvider)
             : base(dbContextProvider)
         {
         }

@@ -10,21 +10,18 @@
 
   <ItemGroup>
     <Compile Remove="DapperEntityMapping\**" />
-    <Compile Remove="DbContexts\**" />
     <Compile Remove="Seed\**" />
     <EmbeddedResource Remove="DapperEntityMapping\**" />
-    <EmbeddedResource Remove="DbContexts\**" />
     <EmbeddedResource Remove="Seed\**" />
     <None Remove="DapperEntityMapping\**" />
-    <None Remove="DbContexts\**" />
     <None Remove="Seed\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Base\QueryTypeConfigurationBase.cs" />
     <Compile Remove="ComplexModel.cs" />
     <Compile Remove="Consts.cs" />
     <Compile Remove="EntityMapping\PersonMapping.cs" />
+    <Compile Remove="EntityMapping\V_CARSETMapping.cs" />
     <Compile Remove="IReadOnlyDatabase.cs" />
     <Compile Remove="ReadOnlyDatabase.cs" />
     <Compile Remove="Repositories\BdcdyRepository.cs" />

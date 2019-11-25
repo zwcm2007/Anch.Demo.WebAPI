@@ -1,4 +1,4 @@
-﻿namespace Anch.Demo.Web
+﻿namespace Anch.Demo.Core
 {
     public class DemoConsts
     {

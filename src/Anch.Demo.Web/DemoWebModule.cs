@@ -4,6 +4,7 @@ using Abp.Configuration.Startup;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
 using Anch.Demo.Application;
+using Anch.Demo.Core;
 using Anch.Demo.Core.Configuration;
 using Anch.Demo.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;

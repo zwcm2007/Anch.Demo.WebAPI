@@ -36,7 +36,7 @@ namespace Anch.Demo.Application
         public void AddUser(AddUserInput input)
         {
             User user = _objectMapper.Map<User>(input);
-
+     
             _userRepo.InsertAndGetId(user);
         }
 
