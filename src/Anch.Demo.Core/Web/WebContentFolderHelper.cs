@@ -20,7 +20,7 @@ namespace Anch.Demo.Core.Web
             }
 
             var directoryInfo = new DirectoryInfo(coreAssemblyDirectoryPath);
-            while (!DirectoryContains(directoryInfo.FullName, "Anch.Demo.Server.sln"))
+            while (!DirectoryContains(directoryInfo.FullName, "Anch.Demo.WebAPI.sln"))
             {
                 if (directoryInfo.Parent == null)
                 {
