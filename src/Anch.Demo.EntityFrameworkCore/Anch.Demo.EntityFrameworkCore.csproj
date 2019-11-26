@@ -20,6 +20,8 @@
   <ItemGroup>
     <Compile Remove="ComplexModel.cs" />
     <Compile Remove="Consts.cs" />
+    <Compile Remove="DbContextOptionsConfigurer.cs" />
+    <Compile Remove="DemoDbContextFactory.cs" />
     <Compile Remove="EntityMapping\PersonMapping.cs" />
     <Compile Remove="EntityMapping\V_CARSETMapping.cs" />
     <Compile Remove="IReadOnlyDatabase.cs" />

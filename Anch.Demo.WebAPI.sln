@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anch.Demo.Application", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anch.Demo.Web", "src\Anch.Demo.Web\Anch.Demo.Web.csproj", "{B7B10302-C0C2-4D75-9DCE-B9DB2B4142F6}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anch.Demo.EntityFrameworkCore.DbMigrations", "src\Anch.Demo.EntityFrameworkCore.DbMigrations\Anch.Demo.EntityFrameworkCore.DbMigrations.csproj", "{091F2E3E-57F9-4877-8F5C-ED481A9A7CF8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{B7B10302-C0C2-4D75-9DCE-B9DB2B4142F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7B10302-C0C2-4D75-9DCE-B9DB2B4142F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7B10302-C0C2-4D75-9DCE-B9DB2B4142F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{091F2E3E-57F9-4877-8F5C-ED481A9A7CF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{091F2E3E-57F9-4877-8F5C-ED481A9A7CF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{091F2E3E-57F9-4877-8F5C-ED481A9A7CF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{091F2E3E-57F9-4877-8F5C-ED481A9A7CF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +76,7 @@ Global
 		{4C851D2A-1173-44F7-8514-FC49BA424C2C} = {DA8FE0B4-24DB-4471-BE70-C8B8EFFAC75C}
 		{E813AF3F-62EC-488B-A9A0-30E75FEDDA3B} = {8F40E4C9-1A62-4293-9F1C-2131561F9AC4}
 		{B7B10302-C0C2-4D75-9DCE-B9DB2B4142F6} = {D16EF453-DAFE-4FE5-B0EA-45CBE2CA2ECD}
+		{091F2E3E-57F9-4877-8F5C-ED481A9A7CF8} = {A7F31774-6D94-427F-AFEB-462A8D996695}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5089DB20-7D3E-4620-8689-ADFED97AAE94}
