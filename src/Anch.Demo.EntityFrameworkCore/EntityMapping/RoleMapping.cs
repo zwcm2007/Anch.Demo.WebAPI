@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Anch.Demo.Core;
+﻿using Anch.Demo.Core;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Anch.Demo.EntityFrameworkCore
 {
@@ -21,7 +21,10 @@ namespace Anch.Demo.EntityFrameworkCore
             // 属性
             builder.Property(e => e.Id).HasColumnName("Id").HasMaxLength(32);
             builder.Property(e => e.Name).IsRequired();
-            builder.Property(e => e.CreateTime).IsRequired()/*.HasDefaultValueSql("GETDATE()")*/;
+            builder.Property(e => e.CreateTime).IsRequired()
+                .HasColumnType("datetime")
+                .ValueGeneratedOnAdd()
+                .HasDefaultValueSql("CURRENT_TIMESTAMP");
         }
     }
 }

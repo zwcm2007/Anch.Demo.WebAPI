@@ -55,7 +55,7 @@ namespace Anch.Demo.Application
         public void ChangePassword(int userId, string newPwd)
         {
             var user = _userRepo.Get(userId);
-
+         
             user.ChangePassword(newPwd);
 
             _userRepo.Update(user);

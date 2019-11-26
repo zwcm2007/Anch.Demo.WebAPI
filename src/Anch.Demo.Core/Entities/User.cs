@@ -17,7 +17,7 @@ namespace Anch.Demo.Core
         /// <summary>
         /// 密码
         /// </summary>
-        public string Password { get; set; } = "123456";
+        public string Password { get; private set; } = "123456";
 
         /// <summary>
         /// 真实姓名
