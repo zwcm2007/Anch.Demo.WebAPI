@@ -8,7 +8,7 @@ namespace Anch.Demo.EntityFrameworkCore
     /// </summary>
     public class UserRoleMapping : EntityTypeConfigurationBase<UserRole>
     {
-        protected override string TableName => "UserRole";
+        protected override string TableName => "User_Role";
 
         public override void Configure(EntityTypeBuilder<UserRole> builder)
         {

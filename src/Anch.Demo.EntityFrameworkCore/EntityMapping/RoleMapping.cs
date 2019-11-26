@@ -20,7 +20,7 @@ namespace Anch.Demo.EntityFrameworkCore
             // 关系
             // 属性
             builder.Property(e => e.Id).HasColumnName("Id").HasMaxLength(32);
-            builder.Property(e => e.RoleName).IsRequired();
+            builder.Property(e => e.Name).IsRequired();
             builder.Property(e => e.CreateTime).IsRequired();
         }
     }

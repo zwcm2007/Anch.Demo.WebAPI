@@ -25,7 +25,7 @@ namespace Anch.Demo.Core
         public string FactName { get; set; }
 
         /// <summary>
-        /// 移动号码
+        /// 手机号码
         /// </summary>
         public string Mobile { get; set; }
 
@@ -35,7 +35,7 @@ namespace Anch.Demo.Core
         public string Address { get; set; }
 
         /// <summary>
-        /// 
+        /// UserRoles
         /// </summary>
         public virtual IList<UserRole> UserRoles { get; set; }
 

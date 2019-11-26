@@ -24,8 +24,6 @@
     <Compile Remove="DemoDbContextFactory.cs" />
     <Compile Remove="EntityMapping\PersonMapping.cs" />
     <Compile Remove="EntityMapping\V_CARSETMapping.cs" />
-    <Compile Remove="IReadOnlyDatabase.cs" />
-    <Compile Remove="ReadOnlyDatabase.cs" />
     <Compile Remove="Repositories\BdcdyRepository.cs" />
     <Compile Remove="Repositories\DjfzCqzsRepository.cs" />
     <Compile Remove="Repositories\EnumValueRepository.cs" />
@@ -33,8 +31,6 @@
     <Compile Remove="Repositories\TaskRepository.cs" />
     <Compile Remove="Repositories\UserRepository.cs" />
     <Compile Remove="Repositories\XtszRepository.cs" />
-    <Compile Remove="SDE_MaintainDbContext.cs" />
-    <Compile Remove="SDE_MaintainRepositoryBase.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -12,12 +12,12 @@ namespace Anch.Demo.Core
         /// <summary>
         /// 角色名称
         /// </summary>
-        public string RoleName { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
-        /// 备注
+        /// 角色描述
         /// </summary>
-        public string BZ { get; set; }
+        public string Description { get; set; }
 
         /// <summary>
         /// 创建时间
@@ -25,7 +25,7 @@ namespace Anch.Demo.Core
         public DateTime CreateTime { get; set; }
 
         /// <summary>
-        /// 
+        /// UserRoles
         /// </summary>
         public virtual IList<UserRole> UserRoles { get; set; }
     }
