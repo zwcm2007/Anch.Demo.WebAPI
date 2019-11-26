@@ -10,33 +10,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Authorization\**" />
-    <Compile Remove="Controllers\BS_BUSINESS\**" />
-    <Compile Remove="Controllers\BT_Client\**" />
     <Compile Remove="Logs\**" />
-    <Compile Remove="wwwroot\**" />
-    <Content Remove="Authorization\**" />
-    <Content Remove="Controllers\BS_BUSINESS\**" />
-    <Content Remove="Controllers\BT_Client\**" />
     <Content Remove="Logs\**" />
-    <Content Remove="wwwroot\**" />
-    <EmbeddedResource Remove="Authorization\**" />
-    <EmbeddedResource Remove="Controllers\BS_BUSINESS\**" />
-    <EmbeddedResource Remove="Controllers\BT_Client\**" />
     <EmbeddedResource Remove="Logs\**" />
-    <EmbeddedResource Remove="wwwroot\**" />
-    <None Remove="Authorization\**" />
-    <None Remove="Controllers\BS_BUSINESS\**" />
-    <None Remove="Controllers\BT_Client\**" />
     <None Remove="Logs\**" />
-    <None Remove="wwwroot\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Remove="App.config" />
-    <Content Remove="sjwh.json" />
-    <Content Remove="sjwh2.Development.json" />
-    <Content Remove="sjwh2.json" />
   </ItemGroup>
 
   <ItemGroup>

@@ -50,13 +50,17 @@ namespace Anch.Demo.EntityFrameworkCore
                 modelBuilder.ApplyConfiguration(instance);
             }
 
-            // Seed
+            // 初始化数据
             modelBuilder.Entity<Role>().HasData(
-              new Role { Id = "1", Name = "系统管理员" },
-              new Role { Id = "2", Name = "查询用户" });
+              new Role { Id = "1", Name = "系统管理员", Description = "系统管理员" },
+              new Role { Id = "2", Name = "查询用户", Description = "普通用户" });
 
             modelBuilder.Entity<User>().HasData(
               new User { Id = 1, UserName = "test", FactName = "冯珏庆", Address = "祥园路28号", Mobile = "18668180673" }
+             );
+
+            modelBuilder.Entity<UserRole>().HasData(
+              new UserRole { UserID = 1, RoleID = "1" }
              );
         }
     }

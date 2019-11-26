@@ -95,10 +95,6 @@ namespace Anch.Demo.Web
                 });
             });
 
-            //// 将Configuration添加为单例服务 add by fengjq 20180503
-            //services.AddSingleton(Configuration);
-            //
-            //services.AddSingleton<IAuthorizationHandler, PermissionAuthorizationHandler>();
             //
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             //
