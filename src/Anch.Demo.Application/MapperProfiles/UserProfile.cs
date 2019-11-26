@@ -8,7 +8,7 @@ namespace Anch.Demo.Application
         public UserProfile()
         {
             CreateMap<User,UserDto>()
-                .ForMember(dest => dest.UserCode, opt => opt.MapFrom(src => src.Id));
+                .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.Id));
 
             //CreateMap<H, H_LS>()
             //    .ForMember(dest => dest.GXSJ, opt => opt.Ignore());
