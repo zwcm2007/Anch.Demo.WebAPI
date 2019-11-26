@@ -51,5 +51,18 @@ namespace Anch.Demo.Core
             }
             Password = newPassword;
         }
+
+        /// <summary>
+        /// 验证密码
+        /// </summary>
+        /// <param name="newPassword"></param>
+        public bool CheckPassword(string password)
+        {
+            if (Password != password)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

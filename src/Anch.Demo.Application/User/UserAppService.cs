@@ -29,6 +29,8 @@ namespace Anch.Demo.Application
             _sqlExecuter = sqlExecuter;
         }
 
+        #region 新增用户
+
         /// <summary>
         /// 新增用户
         /// </summary>
@@ -36,9 +38,13 @@ namespace Anch.Demo.Application
         public void AddUser(AddUserInput input)
         {
             User user = _objectMapper.Map<User>(input);
-     
+
             _userRepo.InsertAndGetId(user);
         }
+
+        #endregion 新增用户
+
+        #region 修改密码
 
         /// <summary>
         /// 修改密码
@@ -55,47 +61,44 @@ namespace Anch.Demo.Application
             _userRepo.Update(user);
         }
 
+        #endregion 修改密码
+
         #region 登录验证
 
         public async Task<LoginOutput> CheckLogin(LoginInput input)
         {
-            var output = new LoginOutput();
+            var output = new LoginOutput() { Succeess = false };
 
             var user = await _userRepo.FirstOrDefaultAsync(u => u.UserName == input.UserName);
             if (user == null)
             {
-                output.Succeeded = false;
-                output.Message = "用户名不存在";
+                output.Message = "用户不存在";
                 return output;
             }
 
-            if (user.Password != input.Password)
+            if (!user.CheckPassword(input.Password))
             {
-                output.Succeeded = false;
                 output.Message = "密码有误";
                 return output;
             }
 
-            output.Succeeded = true;
-            output.Message = "";
-            // 记录登录日志
-            //var clientIP = _httpContextAccessor.HttpContext.Connection.RemoteIpAddress.ToString();
-            //clientIP = clientIP == "::1" ? "127.0.0.1" : clientIP;
-
+            output.Succeess = true;
             return output;
         }
 
         #endregion 登录验证
+
+        #region 查询用户
 
         /// <summary>
         /// 查询用户
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public SearchUsersOutput SearchAllUsers(SearchUsersInput input)
+        public SearchUsersOutput SearchUsers(SearchUsersInput input)
         {
             var predicate = PredicateBuilder.True<User>()
-             .AndIf(input.UserName != null, u => input.IsExactMatch ? u.UserName == input.UserName : u.UserName.Contains(input.UserName));
+               .AndIf(input.UserName != null, u => input.IsExactMatch ? u.UserName == input.UserName : u.UserName.Contains(input.UserName));
 
             var query = _userRepo.GetAll().Where(predicate)
                 .Skip(input.SkipCount)
@@ -111,5 +114,7 @@ namespace Anch.Demo.Application
 
             return output;
         }
+
+        #endregion 查询用户
     }
 }

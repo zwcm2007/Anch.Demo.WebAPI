@@ -21,7 +21,7 @@ namespace Anch.Demo.EntityFrameworkCore
             // 属性
             builder.Property(e => e.Id).HasColumnName("Id").HasMaxLength(32);
             builder.Property(e => e.Name).IsRequired();
-            builder.Property(e => e.CreateTime).IsRequired().ValueGeneratedOnAdd();
+            builder.Property(e => e.CreateTime).IsRequired()/*.HasDefaultValueSql("GETDATE()")*/;
         }
     }
 }

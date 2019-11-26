@@ -2,7 +2,8 @@
 {
     public class LoginOutput
     {
-        public bool Succeeded { get; set; }
+        public bool Succeess { get; set; }
+
         public string Message { get; set; }
 
         public UserInfo UserInfo { get; set; }

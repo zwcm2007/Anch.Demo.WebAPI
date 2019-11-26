@@ -59,7 +59,7 @@ namespace Anch.Demo.Web.Controllers
         public async Task<IActionResult> Authenticate([FromBody] LoginInput input)
         {
             LoginOutput ret = await _userAppService.CheckLogin(input);
-            if (!ret.Succeeded) return Unauthorized();
+            if (!ret.Succeess) return Unauthorized();
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(DemoConsts.Secret);
@@ -104,7 +104,7 @@ namespace Anch.Demo.Web.Controllers
         [HttpGet()]
         public SearchUsersOutput Get([FromQuery] SearchUsersInput input)
         {
-            var output = _userAppService.SearchAllUsers(input);
+            var output = _userAppService.SearchUsers(input);
             return output;
         }
 

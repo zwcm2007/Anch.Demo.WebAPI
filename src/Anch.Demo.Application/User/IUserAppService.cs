@@ -1,5 +1,4 @@
 ﻿using Abp.Application.Services;
-using Anch.Demo.Core;
 using System.Threading.Tasks;
 
 namespace Anch.Demo.Application
@@ -15,6 +14,6 @@ namespace Anch.Demo.Application
 
         Task<LoginOutput> CheckLogin(LoginInput input);
 
-        SearchUsersOutput SearchAllUsers(SearchUsersInput input);
+        SearchUsersOutput SearchUsers(SearchUsersInput input);
     }
 }
